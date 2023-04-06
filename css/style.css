@@ -1,0 +1,161 @@
+:root{
+--primary-hsl-Light-red:0, 100%, 67%;
+--primary-hsl-Orangey-yellow:39, 100%, 56%;
+--primary-hsl-Green-teal:166, 100%, 37%;
+--primary-hsl-Cobalt-blue:234, 85%, 45%;
+--primary-hsl-White: 0, 0%, 100%;
+--primary-hsl-Pale-blue: 221, 100%, 96%;
+--primary-hsl-Light-lavender:241, 100%, 89%;
+--primary-hsl-Dark-gray-blue: 224, 30%, 27%;
+--gradient-Light-slate-blue-background: hsl(252, 100%, 67%);
+--gradient-Light-royal-blue-background: hsl(241, 81%, 54%);
+--gradient-Violet-blue-circle: hsla(256, 72%, 46%, 1);
+--gradient-Persian-blue-circle: hsla(241, 72%, 46%, 0);
+--primary-light-red:hsl((var(--primary-hsl-Light-red)));
+--primary-Orangey-yellow:hsl(var(--primary-hsl-Orangey-yellow));
+--clr-icon-1: 0, 100%, 67%;
+--clr-icon-2: 39, 100%, 56%;
+--clr-icon-3: 166, 100%, 37%;
+--clr-icon-4: 234, 85%, 45%;
+}
+@font-face{
+  font-family:'HankenGrotesk';
+  font-display: swap ;
+  font-weight: 100 800;
+  src:url(https://fonts.google.com/specimen/Hanken+Grotesk)
+  format('truetype');
+}
+
+ *,*::before,*::after{
+  box-sizing:border-box;
+}
+*{
+  margin:0;
+  font:inherit
+}
+img,svg{
+display: block;
+max-width: 100%;
+} /*不太確定這個是不是必要或是功能是什麼*/
+ 
+body{
+  font-family:'HankenGrotesk', sans-serif ;
+  font-size: 1rem;
+  color:gray;
+}
+
+@media (min-width:600px) {
+  body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+    .result-summary{
+      grid-template-columns:1fr 1fr;
+      border-radius: 2rem;
+      box-shadow: .5rem 1px 3rem hsla( 224, 30%, 27%,.2);
+      overflow: hidden;
+    }
+}
+
+
+body{
+  font-family: 'HankenGrotesk',sans-serif;
+  font-size: 1rem;
+  color:hsl(224, 30%, 27%);
+}
+
+.flex-flow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: hsl(var(--itme-color),.3);
+
+} 
+.flex-flow[data-bgcolor="icon-1"]{
+  --itme-color:var(--clr-icon-1);
+}
+.flex-flow[data-bgcolor="icon-2"]{
+  --itme-color:var(--clr-icon-2);
+}
+.flex-flow[data-bgcolor="icon-3"]{
+  --itme-color:var(--clr-icon-3);
+}
+.flex-flow[data-bgcolor="icon-4"]{
+  --itme-color:var(--clr-icon-4);
+}
+
+
+.flex-group{
+display: flex;
+gap:1rem;
+justify-content: center;
+} 
+.section-title{
+  font-weight: 700;
+  font-size:1.5rem ;
+}
+.button{
+  color:hsl(0, 0%, 100%);
+  background-color: hsl(224, 30%, 27%);
+  border: 0;
+  border-radius: 10vw;
+  line-height: 1;
+  cursor:pointer;
+  padding: 1rem 2rem;
+
+}
+.button:hover,
+.button:focus-visible{
+  background:hsl(252, 100%, 67%);
+}
+.result-summary{
+  --padding:2.5rem;
+  max-width: 46rem;
+  display: grid;
+  border-radius: 2rem;
+ 
+}
+.result{
+  padding: var(--padding);
+  text-align: center;
+  background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+  color:hsla(0, 0%, 100%,.8) ;
+  border-radius: 0 0 2rem 2rem;
+}  
+@media (min-width:600px) {
+  .result{
+    border-radius: 2rem;
+  }
+}
+.summary{
+  padding: var(--padding);
+  display:grid;
+}
+.sub-grid{
+  display: grid;
+  gap: 1rem;
+  align-content:start;  /*如果這個沒有設定gap這個指令會失效 */
+}
+.sub-grid[data-gap="large"]{
+  gap:2rem;
+}
+.score{
+  place-content: center;
+  display: grid;
+  margin-inline: auto;
+  width:12rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: linear-gradient(hsl(241, 81%, 54%),hsl(252, 100%, 67%));
+}
+.score>span {
+  display: block;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: hsl(0,0%,100%);
+}
